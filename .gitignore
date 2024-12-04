@@ -1,0 +1,7 @@
+# Backend
+chatbot_env/
+__pycache__/
+
+# Frontend
+node_modules/
+build/

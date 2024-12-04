@@ -1,12 +1,16 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import openai
+from dotenv import load_dotenv
+
+load_dotenv()
+
+import os
+# Set your OpenAI API key
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS to allow frontend requests
-
-# Set your OpenAI API key
-openai.api_key = "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"
 
 @app.route("/", methods=["GET"])
 def home():
